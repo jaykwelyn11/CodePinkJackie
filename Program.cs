@@ -1,6 +1,5 @@
-using [{<ProjectName>}].
+using CodePinkJackie.Models;
 using Microsoft.EntityFrameworkCore;
-Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

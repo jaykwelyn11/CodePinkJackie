@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iWRZv3in9B9dNJpxuQSG4zKTcXuxAY/1vK3vbvCR0NUYljqg79oW9lj6DpSTkkAuwvteVNv0RElDI62uB/C+sQ==",
+  "dgSpecHash": "6hmYcDCg9IpTnex4iAHZThjx2CrgLFMKlUcHEKOAycCv7i9Jsd6pePxXWxl/Szk8W9Bt+UlJ2OReCOsdUu8WKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jacquelyn\\OneDrive\\Documents\\CodingDojo2023\\CodePinkJackie\\CodePinkJackie\\CodePinkJackie.csproj",
+  "projectFilePath": "C:\\Users\\Jacquelyn\\OneDrive\\Documents\\CodingDojo2023\\GroupProject\\CodePinkJackie\\CodePinkJackie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jacquelyn\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jacquelyn\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",

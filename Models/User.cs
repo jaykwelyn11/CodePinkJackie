@@ -1,5 +1,6 @@
 #pragma warning disable CS8618
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace CodePinkJackie.Models;
 
 public class User
@@ -7,16 +8,24 @@ public class User
     [Key]
     public int UserId { get; set; }
 
+    [Required]
+    [MinLength(2, ErrorMessage = "First name needs to be at least 2 characters.")]
     public string FirstName { get; set; }
 
+    [Required]
+    [MinLength(2, ErrorMessage = "Last name needs to be at least 2 characters.")]
     public string LastName { get; set; }
+
 
     public string Nickname { get; set; }
 
-    public Date DateOfBirth { get; set; }
+    [Required]
+    public DateTime DateOfBirth { get; set; }
 
+    [Required]
     public string SchoolIdImage { get; set; }
 
+    [Required]
     public string ParentIdImage { get; set; }
 
     [Required]
@@ -25,15 +34,14 @@ public class User
     public string Email { get; set; }
 
     [Required]
-    [SpecialPassword]
-    [MinLength(8, ErrorMessage = "Woof woof! Needs to be at least 8 characters please!")]
+    [MinLength(8, ErrorMessage = "Password needs to be at least 8 characters please!")]
     [DataType(DataType.Password)]
     public string Password { get; set; }
 
 
     [NotMapped]
     [DataType(DataType.Password)]
-    [Compare("Password", ErrorMessage = "Woof! Passwords don't match, try again!")]
+    [Compare("Password", ErrorMessage = "Passwords don't match, try again!")]
     public string Confirm { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
