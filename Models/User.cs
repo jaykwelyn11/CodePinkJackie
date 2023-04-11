@@ -17,17 +17,6 @@ public class User
     public string LastName { get; set; }
 
 
-    public string Nickname { get; set; }
-
-    [Required]
-    public DateTime DateOfBirth { get; set; }
-
-    [Required]
-    public string SchoolIdImage { get; set; }
-
-    [Required]
-    public string ParentIdImage { get; set; }
-
     [Required]
     [EmailAddress]
     [UniqueEmail]

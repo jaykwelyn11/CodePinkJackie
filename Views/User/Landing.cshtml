@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Welcome!";
+    ViewData["Title"] = "Home Page";
 }
 
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -23,18 +23,7 @@
     </div>
 </nav>
 
-
-<div class="container">
-    <h1 class="indexhead animate__animated animate__bounce">Welcome to Code Pink!</h1>
-
-
-
-    <div class="row mt-5">
-        <div class="col-md">
-            @await Html.PartialAsync("_Register")
-        </div>
-        <div class="col-md">
-            @await Html.PartialAsync("_Login")
-        </div>
-    </div>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

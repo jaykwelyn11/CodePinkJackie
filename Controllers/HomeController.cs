@@ -18,14 +18,6 @@ public class HomeController : Controller
         db = context; // if you use _context above use it here too
     }
 
-    [SessionCheck]
-    [HttpGet("/codepink")]
-    public IActionResult Index()
-    {
-        return View("Index, User");
-    }
-
-
 
     public IActionResult Privacy()
     {

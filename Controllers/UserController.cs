@@ -18,22 +18,31 @@ public class UserController : Controller
         db = context;
     }
 
+    private int? uid
+    {
+        get
+        {
+            return HttpContext.Session.GetInt32("uid");
+        }
+    }
+
     [HttpGet("")]
     public IActionResult Home()
     {
         if (HttpContext.Session.GetInt32("uid") != null)
         {
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("CodePink", "Product");
         }
-        return View("Home");
+        return View("Landing");
     }
+
 
     [HttpGet("/welcome")]
     public IActionResult LogReg()
     {
         if (HttpContext.Session.GetInt32("uid") != null)
         {
-            return RedirectToAction("Index", "User");
+            return RedirectToAction("CodePink", "Product");
         }
         else
         {
@@ -46,20 +55,25 @@ public class UserController : Controller
     {
         if (!ModelState.IsValid)
         {
+            Console.WriteLine("I am here 1");
             return View("LogReg");
         }
+        else
+        {
+            PasswordHasher<User> hash = new PasswordHasher<User>(); // This creates a new instance of the password hasher so that we can use it on the next line
+            newUser.Password = hash.HashPassword(newUser, newUser.Password);
+            // let newUser.Password equal a hashed version of the password
+            db.Users.Add(newUser);
+            db.SaveChanges();
 
-        PasswordHasher<User> hashbrowns = new PasswordHasher<User>();
-        newUser.Password = hashbrowns.HashPassword(newUser, newUser.Password);
-
-        db.Users.Add(newUser);
-        db.SaveChanges();
-
-        HttpContext.Session.SetInt32("uid", newUser.UserId);
-
-        return RedirectToAction("Index", "User");
+            HttpContext.Session.SetInt32("uid", newUser.UserId);
+            HttpContext.Session.SetString("name", newUser.FirstName + " " + newUser.LastName);
+            Console.WriteLine("I am here 2");
+            return RedirectToAction("CodePink", "Product");
+        }
     }
 
+    [HttpPost("/login")]
     public IActionResult Login(LoginUser userSubmission)
     {
         if (!ModelState.IsValid)
@@ -90,13 +104,21 @@ public class UserController : Controller
         // Handle success (this should route to an internal page)  
         HttpContext.Session.SetInt32("uid", userInDb.UserId);
 
-        return RedirectToAction("Index", "User");
+        return RedirectToAction("CodePink", "Product");
     }
 
     [HttpPost("/logout")]
     public IActionResult Logout()
     {
-        HttpContext.Session.Clear();
-        return RedirectToAction("Home");
+        if (HttpContext.Session.GetInt32("uid") != null)
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Home");
+        }
+        else
+        {
+            return View("Landing");
+        }
+
     }
 }
