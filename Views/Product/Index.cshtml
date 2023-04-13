@@ -23,12 +23,12 @@
                     <a class="nav-link text-dark" asp-area="" asp-controller="Product"
                         asp-action="AllProducts">Products</a>
                 </li>
-                @* <li class="nav-item">
-                    @if (@Model.UserId == @Context.Session.GetInt32("uid"))
-                    {
-                    <a href="/codepink/addProduct"><button class="button-56">Add Produc</button></a>
-                    }
-                    </li> *@
+                @if (@Context.Session.GetInt32("UserId") == 1)
+                {
+                    <li class="nav-item">
+                        <a href="/codepink/addProduct">Add Product</a>
+                    </li>
+                }
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
                 </li>
@@ -37,6 +37,6 @@
     </div>
 </nav>
 
-
+<h1>Welcome, @Context.Session.GetString("name")</h1>
 
 <h1>This is the CodePink page.</h1>

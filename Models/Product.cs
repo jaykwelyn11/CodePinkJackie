@@ -16,6 +16,8 @@ public class Product
     public string Img4 { get; set; }
     public string Img5 { get; set; }
     public string Description { get; set; }
+
+    // public bool AddToCart { get; set; } = false;
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 

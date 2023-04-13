@@ -110,15 +110,7 @@ public class UserController : Controller
     [HttpPost("/logout")]
     public IActionResult Logout()
     {
-        if (HttpContext.Session.GetInt32("uid") != null)
-        {
-            HttpContext.Session.Clear();
-            return RedirectToAction("Home");
-        }
-        else
-        {
-            return View("Landing");
-        }
-
+        HttpContext.Session.Clear();
+        return RedirectToAction("Home");
     }
 }

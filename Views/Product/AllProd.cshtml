@@ -2,7 +2,6 @@
     ViewData["Title"] = "All Products";
 }
 
-
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" asp-area="" asp-controller="Product" asp-action="CodePink">CodePink</a>
@@ -18,12 +17,12 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Org" asp-action="Laelynn">Laelynn</a>
                 </li>
-                @* <li class="nav-item">
-                    @if (@Model.UserId == @Context.Session.GetInt32("uid"))
-                    {
-                    <a href="/codepink/addProduct"><button class="button-56">Add Produc</button></a>
-                    }
-                    </li> *@
+                @if (@Context.Session.GetInt32("UserId") == 1)
+                {
+                    <li class="nav-item">
+                        <a href="/codepink/addProduct">Add Product</a>
+                    </li>
+                }
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
                 </li>
@@ -35,12 +34,13 @@
 <h1>This is the all products page.</h1>
 
 
+@model List<Product>
 
-@*
-    @foreach (Product p in Model)
-    {
+@foreach (Product p in Model)
+{
     <div class="position-relative">
-    <a href="/codepink/@p.ProductId"><img src="@p.Img1"></a>
-    <p>@p.Price</p>
+        <p>@p.Name</p>
+        <a href="/codepink/@p.ProductId"><img src="@p.Img1"></a>
+        <p>@p.Price</p>
     </div>
-    } *@
+}
