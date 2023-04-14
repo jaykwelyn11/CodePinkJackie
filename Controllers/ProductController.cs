@@ -28,14 +28,12 @@ public class ProductController : Controller
 
 
 
-    [SessionCheck]
     [HttpGet("/codepink")]
     public IActionResult CodePink()
     {
         return View("Index");
     }
 
-    [SessionCheck]
     [HttpGet("/codepink/products")]
     public IActionResult AllProducts()
     {
@@ -45,21 +43,23 @@ public class ProductController : Controller
         // return View("AllProd");
     }
 
-    [SessionCheck]
-    [HttpGet("/codepink/{producttId}")]
+    [HttpGet("/codepink/{productId}")]
     public IActionResult ViewOne(int productId)
     {
-        Product? item = db.Products
-        .FirstOrDefault(item => item.ProductId == productId);
-        if (item == null)
+        Product? product = db.Products.FirstOrDefault(product => product.ProductId == productId);
+        if (product == null)
         {
+            Console.WriteLine("I am here1");
+            Console.WriteLine(productId);
             return RedirectToAction("AllProducts");
         }
         else
         {
-            return View("ViewOne", item);
+            Console.WriteLine("I am here2");
+            return View("ViewOne", product);
         }
     }
+
 
     [SessionCheck]
     [HttpGet("/codepink/addProduct")]
@@ -69,10 +69,12 @@ public class ProductController : Controller
     }
 
 
+    [SessionCheck]
     [HttpPost("/codepink/createProduct")]
     public IActionResult CreateProduct(Product p)
     {
-        p.UserId = (int)HttpContext.Session.GetInt32("uid");
+        // p.UserId = (int)HttpContext.Session.GetInt32("uid");
+        p.UserId = 1;
         if (ModelState.IsValid)
         {
             db.Products.Add(p);
@@ -89,8 +91,7 @@ public class ProductController : Controller
         Product? item = db.Products
         .Include(item => item.Admin)
         .FirstOrDefault(p => p.ProductId == productId);
-
-        if (item == null || item.UserId != HttpContext.Session.GetInt32("uid"))
+        if (uid != 1)
         {
             return RedirectToAction("AllProducts");
         }
@@ -220,7 +221,7 @@ public class SessionCheckAttribute : ActionFilterAttribute
         {
             // Redirect to the Index page if there was nothing in session
             // "Home" here is referring to "HomeController", you can use any controller that is appropriate here
-            context.Result = new RedirectToActionResult("Index", "User", null);
+            context.Result = new RedirectToActionResult("CodePink", "Product", null);
         }
     }
 }

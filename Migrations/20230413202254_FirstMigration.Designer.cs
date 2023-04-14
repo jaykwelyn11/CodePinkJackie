@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodePinkJackie.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20230411182716_FirstMigration")]
+    [Migration("20230413202254_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,37 @@ namespace CodePinkJackie.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("CodePinkJackie.Models.Donation", b =>
+                {
+                    b.Property<int>("DonationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("DonateMoney")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DonateProduct")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DonationId");
+
+                    b.ToTable("Donations");
+                });
 
             modelBuilder.Entity("CodePinkJackie.Models.Product", b =>
                 {
@@ -78,6 +109,46 @@ namespace CodePinkJackie.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("CodePinkJackie.Models.Student", b =>
+                {
+                    b.Property<int>("StudentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nickname")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ParentIdImage")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SchoolIdImage")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("StudentId");
+
+                    b.ToTable("Students");
+                });
+
             modelBuilder.Entity("CodePinkJackie.Models.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -114,12 +185,17 @@ namespace CodePinkJackie.Migrations
             modelBuilder.Entity("CodePinkJackie.Models.Product", b =>
                 {
                     b.HasOne("CodePinkJackie.Models.User", "Admin")
-                        .WithMany()
+                        .WithMany("addedProduct")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Admin");
+                });
+
+            modelBuilder.Entity("CodePinkJackie.Models.User", b =>
+                {
+                    b.Navigation("addedProduct");
                 });
 #pragma warning restore 612, 618
         }

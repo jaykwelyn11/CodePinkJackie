@@ -1,8 +1,8 @@
-@{
-    ViewData["Title"] = "View Product";
+﻿@{
+    ViewData["Title"] = "Code Pink";
 }
 
-@model Product
+@model User
 
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container-fluid">
@@ -39,27 +39,17 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
                     </li> 
                 }
+                
             </ul>
         </div>
     </div>
 </nav>
 
+@* <h1>Welcome, @Context.Session.GetString("name")</h1> *@
 
+@* @if (Context.Session.GetInt32("uid") == 1)
+{
+    <h1>Welcome, @Context.Session.GetString("name")</h1>
+} *@
 
-<h1>This is the view one product page.</h1>
-
-<p>@Model.Name</p>
-<p>@Model.Category</p>
-<img class="viewImg" src="@Model.Img1">
-<img class="viewImg" src="@Model.Img2">
-<img class="viewImg" src="@Model.Img3">
-<img class="viewImg" src="@Model.Img4">
-<img class="viewImg" src="@Model.Img5">
-<p>@Model.Description</p>
-<h3>$@Model.Price</h3>
-
-@if (Context.Session.GetInt32("uid") == 1)
-    {
-    <a href="/codepink/edit/@Model.ProductId"><button class="button-56">Edit Product</button></a>
-    <a href="/codepink/delete/@Model.ProductId"><button class="button-56">Delete Product</button></a>
-    }
+<h1>This is the CodePink page.</h1>

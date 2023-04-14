@@ -22,8 +22,15 @@
                     <a class="nav-link text-dark" asp-area="" asp-controller="Org" asp-action="Laelynn">Laelynn</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product"
+                        asp-action="AllProducts">Products</a>
                 </li>
+                @if(Context.Session.GetInt32("uid") != null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+                    </li> 
+                }
             </ul>
         </div>
     </div>
@@ -38,38 +45,48 @@
         <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
         <input class="form-control" asp-for="Name">
     </div>
-    <div class="mb-3">
+    @* <div class="mb-3">
         <label asp-for="Category">Category :</label>
         <span asp-validation-for="Category" class="text-danger font-weight-bold"></span>
         <input class="form-control" asp-for="Category">
-    </div>
+        </div> *@
+    <label for="category">Category :</label>
+    <span asp-validation-for="Category" class="text-danger font-weight-bold"></span>
+    <select name="Category" id="Category">
+        <option value="Laptops">Laptops</option>
+        <option value="Headphones">Headphones</option>
+        <option value="Accessories">Tech Accessories</option>
+        <option value="Tablets">Tablets</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Desk Accessories">Desk Accessories</option>
+    </select>
     <div class="mb-3">
         <label asp-for="Price">Price :</label>
         <span asp-validation-for="Price" class="text-danger font-weight-bold"></span>
         <input class="form-control" asp-for="Price">
     </div>
     <div class="mb-3">
-        <label asp-for="Img1">First Img URL :</label>
+        <label asp-for="Img1">First Image URL :</label>
         <span asp-validation-for="Img1" class="text-danger font-weight-bold"></span>
         <input class="form-control" asp-for="Img1">
     </div>
     <div class="mb-3">
-        <label asp-for="Img2">Second Img URL :</label>
+        <label asp-for="Img2">Second Image URL :</label>
         <span asp-validation-for="Img2" class="text-danger font-weight-bold"></span>
         <input class="form-control" asp-for="Img2">
     </div>
     <div class="mb-3">
-        <label asp-for="Img3">Third Img URL :</label>
+        <label asp-for="Img3">Third Image URL :</label>
         <span asp-validation-for="Img3" class="text-danger font-weight-bold"></span>
         <input class="form-control" asp-for="Img3">
     </div>
     <div class="mb-3">
-        <label asp-for="Img4">Fourth Img URL :</label>
+        <label asp-for="Img4">Fourth Image URL :</label>
         <span asp-validation-for="Img4" class="text-danger font-weight-bold"></span>
         <input class="form-control" asp-for="Img4">
     </div>
     <div class="mb-3">
-        <label asp-for="Img5">Fifth Img URL :</label>
+        <label asp-for="Img5">Fifth Image URL :</label>
         <span asp-validation-for="Img5" class="text-danger font-weight-bold"></span>
         <input class="form-control" asp-for="Img5">
     </div>

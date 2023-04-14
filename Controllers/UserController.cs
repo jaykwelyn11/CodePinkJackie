@@ -33,7 +33,7 @@ public class UserController : Controller
         {
             return RedirectToAction("CodePink", "Product");
         }
-        return View("Landing");
+        return View("Index");
     }
 
 
@@ -55,7 +55,6 @@ public class UserController : Controller
     {
         if (!ModelState.IsValid)
         {
-            Console.WriteLine("I am here 1");
             return View("LogReg");
         }
         else
@@ -68,7 +67,6 @@ public class UserController : Controller
 
             HttpContext.Session.SetInt32("uid", newUser.UserId);
             HttpContext.Session.SetString("name", newUser.FirstName + " " + newUser.LastName);
-            Console.WriteLine("I am here 2");
             return RedirectToAction("CodePink", "Product");
         }
     }
@@ -111,6 +109,6 @@ public class UserController : Controller
     public IActionResult Logout()
     {
         HttpContext.Session.Clear();
-        return RedirectToAction("Home");
+        return RedirectToAction("Index");
     }
 }

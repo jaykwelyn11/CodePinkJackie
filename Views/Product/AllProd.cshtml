@@ -15,17 +15,28 @@
                     <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="CodePink">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="User"
+                        asp-action="LogReg">Login/Register</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Org" asp-action="Laelynn">Laelynn</a>
                 </li>
-                @if (@Context.Session.GetInt32("UserId") == 1)
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product"
+                        asp-action="AllProducts">Products</a>
+                </li>
+                @if(Context.Session.GetInt32("uid") == 1)
                 {
                     <li class="nav-item">
-                        <a href="/codepink/addProduct">Add Product</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AddOne">Add Product</a>
                     </li>
                 }
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
-                </li>
+                @if(Context.Session.GetInt32("uid") != null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+                    </li> 
+                }
             </ul>
         </div>
     </div>
@@ -39,8 +50,13 @@
 @foreach (Product p in Model)
 {
     <div class="position-relative">
-        <p>@p.Name</p>
+        
         <a href="/codepink/@p.ProductId"><img src="@p.Img1"></a>
-        <p>@p.Price</p>
+        <a href="/codepink/@p.ProductId">
+            <p>@p.Name</p>
+        </a>
+        <a href="/codepink/@p.ProductId">
+            <p>$@p.Price</p>
+        </a>
     </div>
 }
