@@ -25,11 +25,11 @@
                     <a class="nav-link text-dark" asp-area="" asp-controller="Product"
                         asp-action="AllProducts">Products</a>
                 </li>
-                @if(Context.Session.GetInt32("uid") != null)
+                @if (Context.Session.GetInt32("uid") != null)
                 {
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
-                    </li> 
+                    </li>
                 }
             </ul>
         </div>
@@ -38,7 +38,7 @@
 
 @model Product
 
-<h1 class="viewPup">Add new product</h1>
+<h1>Add new product</h1>
 <form class="shadow p-3" asp-controller="Product" asp-action="CreateProduct" method="Post">
     <div class="mb-3">
         <label asp-for="Name">Product Name :</label>

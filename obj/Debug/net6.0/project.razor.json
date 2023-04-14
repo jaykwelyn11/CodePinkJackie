@@ -16323,6 +16323,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Jacquelyn\\OneDrive\\Documents\\CodingDojo2023\\GroupProject\\CodePinkJackie\\Views\\Org\\StudentSuccess.cshtml",
+      "TargetPath": "Views\\Org\\StudentSuccess.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jacquelyn\\OneDrive\\Documents\\CodingDojo2023\\GroupProject\\CodePinkJackie\\Views\\Org\\_SignUp.cshtml",
+      "TargetPath": "Views\\Org\\_SignUp.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Jacquelyn\\OneDrive\\Documents\\CodingDojo2023\\GroupProject\\CodePinkJackie\\Views\\Product\\Index.cshtml",
       "TargetPath": "Views\\Product\\Index.cshtml",
       "FileKind": "mvc"
@@ -16358,6 +16368,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Jacquelyn\\OneDrive\\Documents\\CodingDojo2023\\GroupProject\\CodePinkJackie\\Views\\Org\\_Donate.cshtml",
+      "TargetPath": "Views\\Org\\_Donate.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Jacquelyn\\OneDrive\\Documents\\CodingDojo2023\\GroupProject\\CodePinkJackie\\Views\\Product\\AddOne.cshtml",
       "TargetPath": "Views\\Product\\AddOne.cshtml",
       "FileKind": "mvc"
@@ -16380,6 +16395,11 @@
     {
       "FilePath": "c:\\Users\\Jacquelyn\\OneDrive\\Documents\\CodingDojo2023\\GroupProject\\CodePinkJackie\\Views\\User\\_Register.cshtml",
       "TargetPath": "Views\\User\\_Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Jacquelyn\\OneDrive\\Documents\\CodingDojo2023\\GroupProject\\CodePinkJackie\\Views\\Org\\DonationSuccess.cshtml",
+      "TargetPath": "Views\\Org\\DonationSuccess.cshtml",
       "FileKind": "mvc"
     },
     {

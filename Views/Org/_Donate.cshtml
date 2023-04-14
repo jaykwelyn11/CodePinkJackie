@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Laelynn";
+}
+
+@model Donation
+
+<h1>Wish to donate to our organization? Fill out the form here and we'll get back to you!</h1>
+
+<form class="shadow p-3" asp-controller="Org" asp-action="CreateStudent" method="Post">
+    <div class="mb-3">
+        <label asp-for="Name">Name:</label>
+        <h4>(If you wish to stay anonymous, please leave blank)</h4>
+        <input class="form-control" asp-for="Name">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DonateProduct">Donate Product(s) :</label>
+        <h4>This can be laptops, tablets, tech accessories, etc.</h4>
+        <span asp-validation-for="DonateProduct" class="text-danger font-weight-bold"></span>
+        <input asp-for="DonateProduct">
+    </div>
+    <div class="mb-3">
+        <label asp-for="DonateMoney">Donate Money :</label>
+        <h4>Any contribution helps!</h4>
+        <span asp-validation-for="DonateMoney" class="text-danger font-weight-bold"></span>
+        <input asp-for="DonateMoney">
+    </div>
+    <button class="button-56">Donate</button>
+</form>

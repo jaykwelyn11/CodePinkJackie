@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Laelynn";
+}
+
+@model Student
+
+
+<h1>Want to be a Code Pink Girl?</h1>
+<form class="shadow p-3" asp-controller="Org" asp-action="CreateStudent" method="Post">
+    <div class="mb-3">
+        <label asp-for="FirstName">First Name:</label>
+        <span asp-validation-for="FirstName" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="FirstName">
+    </div>
+    <div class="mb-3">
+        <label asp-for="LastName">Last Name:</label>
+        <span asp-validation-for="LastName" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="LastName">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Nickname">Nickname :</label>
+        <input class="form-control" asp-for="Nickname">
+    </div>
+    <div class="mb-3">
+        <label asp-for="DateOfBirth">Date of Birth :</label>
+        <span asp-validation-for="DateOfBirth" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="DateOfBirth">
+    </div>
+    <div class="mb-3">
+        <label asp-for="SchoolIdImage">School ID Image URL :</label>
+        <span asp-validation-for="SchoolIdImage" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="SchoolIdImage">
+    </div>
+    <div class="mb-3">
+        <label asp-for="ParentIdImage">Parent ID Image URL :</label>
+        <span asp-validation-for="ParentIdImage" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="ParentIdImage">
+    </div>
+    <button class="button-56">Sign me up!</button>
+</form>

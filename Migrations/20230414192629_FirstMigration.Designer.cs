@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodePinkJackie.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20230413202254_FirstMigration")]
+    [Migration("20230414192629_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,12 +30,11 @@ namespace CodePinkJackie.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("DonateMoney")
-                        .HasColumnType("int");
+                    b.Property<bool>("DonateMoney")
+                        .HasColumnType("tinyint(1)");
 
-                    b.Property<string>("DonateProduct")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<bool>("DonateProduct")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -57,6 +56,9 @@ namespace CodePinkJackie.Migrations
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<bool>("AddToCart")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Category")
                         .IsRequired()
@@ -143,6 +145,9 @@ namespace CodePinkJackie.Migrations
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("StudentId");
 

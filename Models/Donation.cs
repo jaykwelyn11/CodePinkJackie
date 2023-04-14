@@ -10,9 +10,11 @@ public class Donation
 
     public string Name { get; set; }
 
-    public string DonateProduct { get; set; }
+    [Required]
+    public bool DonateProduct { get; set; }
 
-    public int DonateMoney { get; set; }
+    [Required]
+    public bool DonateMoney { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;

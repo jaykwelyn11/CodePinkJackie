@@ -2,6 +2,8 @@
     ViewData["Title"] = "Laelynn";
 }
 
+@model Student
+
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" asp-area="" asp-controller="Product" asp-action="CodePink">CodePink</a>
@@ -25,17 +27,18 @@
                     <a class="nav-link text-dark" asp-area="" asp-controller="Product"
                         asp-action="AllProducts">Products</a>
                 </li>
-                @if(Context.Session.GetInt32("uid") == 1)
+                @if (Context.Session.GetInt32("uid") == 1)
                 {
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AddOne">Add Product</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AddOne">Add
+                            Product</a>
                     </li>
                 }
-                @if(Context.Session.GetInt32("uid") != null)
+                @if (Context.Session.GetInt32("uid") != null)
                 {
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
-                    </li> 
+                    </li>
                 }
             </ul>
         </div>
@@ -43,3 +46,14 @@
 </nav>
 
 <h1>This is Laelynn/Donation page</h1>
+
+
+
+<div class="col-md">
+    <div class="col-md">
+        @await Html.PartialAsync("_SignUp")
+    </div>
+    <div class="col-md">
+        @await Html.PartialAsync("_Donate")
+    </div>
+</div>

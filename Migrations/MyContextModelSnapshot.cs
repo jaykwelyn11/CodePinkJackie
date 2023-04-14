@@ -28,12 +28,11 @@ namespace CodePinkJackie.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("DonateMoney")
-                        .HasColumnType("int");
+                    b.Property<bool>("DonateMoney")
+                        .HasColumnType("tinyint(1)");
 
-                    b.Property<string>("DonateProduct")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<bool>("DonateProduct")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -55,6 +54,9 @@ namespace CodePinkJackie.Migrations
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<bool>("AddToCart")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Category")
                         .IsRequired()
@@ -141,6 +143,9 @@ namespace CodePinkJackie.Migrations
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("StudentId");
 

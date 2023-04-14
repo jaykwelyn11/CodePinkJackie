@@ -8,81 +8,97 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CodePinkJackie
 build_property.RootNamespace = CodePinkJackie
-build_property.ProjectDir = c:\Users\Jacquelyn\OneDrive\Documents\CodingDojo2023\GroupProject\CodePinkJackie\
+build_property.ProjectDir = C:\Users\Jacquelyn\OneDrive\Documents\CodingDojo2023\GroupProject\CodePinkJackie\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Jacquelyn\OneDrive\Documents\CodingDojo2023\GroupProject\CodePinkJackie
+build_property.MSBuildProjectDirectory = C:\Users\Jacquelyn\OneDrive\Documents\CodingDojo2023\GroupProject\CodePinkJackie
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Home/Privacy.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Org/Laelynn.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Org/DonationSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JnXERvbmF0aW9uU3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Org/Laelynn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JnXExhZWx5bm4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/AddOne.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Org/StudentSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JnXFN0dWRlbnRTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Org/_Donate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JnXF9Eb25hdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Org/_SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JnXF9TaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/AddOne.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBZGRPbmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/AllProd.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/AllProd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBbGxQcm9kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/Cart.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/Checkout.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDaGVja291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/Edit.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/Index.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/ViewOne.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Product/ViewOne.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxWaWV3T25lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Shared/Error.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/User/Index.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/User/LogReg.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/User/LogReg.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dSZWcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/User/_Login.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/User/_Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/User/_Register.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/User/_Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/_ViewImports.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/_ViewStart.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Shared/_Layout.cshtml]
+[C:/Users/Jacquelyn/OneDrive/Documents/CodingDojo2023/GroupProject/CodePinkJackie/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bsl6sfc24l

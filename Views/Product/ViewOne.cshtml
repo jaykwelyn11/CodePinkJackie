@@ -27,17 +27,18 @@
                     <a class="nav-link text-dark" asp-area="" asp-controller="Product"
                         asp-action="AllProducts">Products</a>
                 </li>
-                @if(Context.Session.GetInt32("uid") == 1)
+                @if (Context.Session.GetInt32("uid") == 1)
                 {
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AddOne">Add Product</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AddOne">Add
+                            Product</a>
                     </li>
                 }
-                @if(Context.Session.GetInt32("uid") != null)
+                @if (Context.Session.GetInt32("uid") != null)
                 {
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
-                    </li> 
+                    </li>
                 }
             </ul>
         </div>
@@ -48,18 +49,20 @@
 
 <h1>This is the view one product page.</h1>
 
-<p>@Model.Name</p>
-<p>@Model.Category</p>
+<h3>@Model.Name</h3>
+<h3>@Model.Category</h3>
 <img class="viewImg" src="@Model.Img1">
 <img class="viewImg" src="@Model.Img2">
 <img class="viewImg" src="@Model.Img3">
 <img class="viewImg" src="@Model.Img4">
 <img class="viewImg" src="@Model.Img5">
-<p>@Model.Description</p>
-<h3>$@Model.Price</h3>
+<h3>Description: @Model.Description</h3>
+<h3>Price: $@Model.Price</h3>
 
 @if (Context.Session.GetInt32("uid") == 1)
-    {
+{
     <a href="/codepink/edit/@Model.ProductId"><button class="button-56">Edit Product</button></a>
     <a href="/codepink/delete/@Model.ProductId"><button class="button-56">Delete Product</button></a>
-    }
+}
+
+<a href="/codepink/products"><button class="button-56">Back to products</button></a>

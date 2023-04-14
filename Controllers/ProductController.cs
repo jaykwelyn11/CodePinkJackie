@@ -148,64 +148,65 @@ public class ProductController : Controller
         return RedirectToAction("AllProducts");
     }
 
-    // [HttpPost("/codepink/{id}/cart/add")]
-    // public IActionResult AddToCart(int id, Product addedProduct)
-    // {
 
-    //     Product? dbProduct = db.Products.FirstOrDefault(t => t.ProductId == id);
-    //     if (dbProduct == null)
-    //     {
-    //         return RedirectToAction("AllProducts");
-    //         // Console.BackgroundColor = ConsoleColor.Black;
-    //         // Console.ForegroundColor = ConsoleColor.Red;
-    //         // Console.WriteLine("FAIL.");
-    //     }
+    [HttpPost("/codepink/{id}/cart/add")]
+    public IActionResult AddToCart(int id, Product addedProduct)
+    {
 
-    //     dbProduct.AddToCart = true;
+        Product? dbProduct = db.Products.FirstOrDefault(t => t.ProductId == id);
+        if (dbProduct == null)
+        {
+            return RedirectToAction("AllProducts");
+            // Console.BackgroundColor = ConsoleColor.Black;
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine("FAIL.");
+        }
 
-    //     db.Products.Update(dbProduct);
-    //     db.SaveChanges();
+        dbProduct.AddToCart = true;
 
-    //     return RedirectToAction("AllProducts");
-    // }
+        db.Products.Update(dbProduct);
+        db.SaveChanges();
 
-    // [SessionCheck]
-    // [HttpPost("/codepink/{id}/cart/delete")]
-    // public IActionResult RemoveFromCart(int id, Product removedProduct)
-    // {
-
-    //     Product? dbProduct = db.Products.FirstOrDefault(t => t.ProductId == id);
-    //     if (dbProduct == null)
-    //     {
-    //         return RedirectToAction("AllProducts");
-    //         // Console.BackgroundColor = ConsoleColor.Black;
-    //         // Console.ForegroundColor = ConsoleColor.Red;
-    //         // Console.WriteLine("FAIL.");
-    //     }
-
-    //     dbProduct.AddToCart = false;
-
-    //     db.Products.Update(dbProduct);
-    //     db.SaveChanges();
-
-    //     return RedirectToAction("ViewCart");
-    // }
-
-    // [SessionCheck]
-    // [HttpGet("/codepink/cart")]
-    // public IActionResult ViewCart()
-    // {
-    //     List<Product> ProductsInCart = db.Products.Where(t => t.AddToCart == true).ToList();
-    //     return View("Cart", ProductsInCart);
-    // }
+        return RedirectToAction("AllProducts");
+    }
 
 
-    // [SessionCheck]
-    // [HttpGet("/codepink/checkout")]
-    // public IActionResult Checkout()
-    // {
-    //     return View("Checkout");
-    // }
+    [HttpPost("/codepink/{id}/cart/delete")]
+    public IActionResult RemoveFromCart(int id, Product removedProduct)
+    {
+
+        Product? dbProduct = db.Products.FirstOrDefault(t => t.ProductId == id);
+        if (dbProduct == null)
+        {
+            return RedirectToAction("AllProducts");
+            // Console.BackgroundColor = ConsoleColor.Black;
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine("FAIL.");
+        }
+
+        dbProduct.AddToCart = false;
+
+        db.Products.Update(dbProduct);
+        db.SaveChanges();
+
+        return RedirectToAction("ViewCart");
+    }
+
+
+    [HttpGet("/codepink/cart")]
+    public IActionResult ViewCart()
+    {
+        List<Product> ProductsInCart = db.Products.Where(t => t.AddToCart == true).ToList();
+        return View("Cart", ProductsInCart);
+    }
+
+
+
+    [HttpGet("/codepink/checkout")]
+    public IActionResult Checkout()
+    {
+        return View("Checkout");
+    }
 
 }
 

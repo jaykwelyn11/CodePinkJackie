@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "All Products";
+    ViewData["Title"] = "Laelynn";
 }
 
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -12,7 +12,7 @@
         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="CodePink">Home</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="User"
@@ -43,25 +43,4 @@
     </div>
 </nav>
 
-<h1>This is the all products page.</h1>
-
-
-@model List<Product>
-
-@foreach (Product product in Model)
-{
-    <div class="position-relative">
-
-        <a href="/codepink/@product.ProductId"><img src="@product.Img1"></a>
-        <a href="/codepink/@product.ProductId">
-            <p>@product.Name</p>
-        </a>
-        <a href="/codepink/@product.ProductId">
-            <p>$@product.Price</p>
-        </a>
-        <form asp-controller="Product" asp-action="AddToCart" asp-route-id="@product.ProductId">
-            <button class="btn">Add To Cart</button>
-        </form>
-    </div>
-
-}
+<h1>Thank you for your interest in becoming a Code Pink Girl! Someone will be in touch with you in a few days.</h1>
