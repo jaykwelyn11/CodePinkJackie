@@ -25,18 +25,22 @@
                     <a class="nav-link text-dark" asp-area="" asp-controller="Product"
                         asp-action="AllProducts">Products</a>
                 </li>
-                @if(Context.Session.GetInt32("uid") == 1)
+                @if (Context.Session.GetInt32("uid") == 1)
                 {
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AddOne">Add Product</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AddOne">Add
+                            Product</a>
                     </li>
                 }
-                @if(Context.Session.GetInt32("uid") != null)
+                @if (Context.Session.GetInt32("uid") != null)
                 {
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
-                    </li> 
+                    </li>
                 }
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="ViewCart">Cart</a>
+                </li>
             </ul>
         </div>
     </div>

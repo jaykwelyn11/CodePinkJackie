@@ -38,6 +38,10 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
                     </li>
                 }
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="ViewCart">Cart</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -59,9 +63,10 @@
         <a href="/codepink/@product.ProductId">
             <p>$@product.Price</p>
         </a>
-        <form asp-controller="Cart" asp-action="AddToCart" asp-route-id="@product.ProductId">
+        <form asp-controller="Product" asp-action="AddToCart" asp-route-id="@product.ProductId">
             <button class="btn">Add To Cart</button>
         </form>
+
     </div>
 
 }

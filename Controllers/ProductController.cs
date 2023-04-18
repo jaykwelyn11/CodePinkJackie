@@ -152,6 +152,67 @@ public class ProductController : Controller
     }
 
 
+
+    [HttpPost("/codepink/{id}/cart/add")]
+    public IActionResult AddToCart(int id, Product addedProduct)
+    {
+
+        Product? dbProduct = db.Products.FirstOrDefault(t => t.ProductId == id);
+        if (dbProduct == null)
+        {
+            Console.WriteLine("Not added to cart");
+            return RedirectToAction("AllProducts");
+            // Console.BackgroundColor = ConsoleColor.Black;
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine("FAIL.");
+        }
+
+        dbProduct.AddToCart = true;
+
+        db.Products.Update(dbProduct);
+        db.SaveChanges();
+
+        Console.WriteLine("Added to cart");
+        return RedirectToAction("ViewCart");
+    }
+
+
+    [HttpPost("/codepink/{id}/cart/delete")]
+    public IActionResult RemoveFromCart(int id, Product removedProduct)
+    {
+
+        Product? dbProduct = db.Products.FirstOrDefault(t => t.ProductId == id);
+        if (dbProduct == null)
+        {
+            return RedirectToAction("AllProducts");
+            // Console.BackgroundColor = ConsoleColor.Black;
+            // Console.ForegroundColor = ConsoleColor.Red;
+            // Console.WriteLine("FAIL.");
+        }
+
+        dbProduct.AddToCart = false;
+
+        db.Products.Update(dbProduct);
+        db.SaveChanges();
+
+        return RedirectToAction("ViewCart");
+    }
+
+
+    [HttpGet("/codepink/cart")]
+    public IActionResult ViewCart()
+    {
+        List<Product> ProductsInCart = db.Products.Where(t => t.AddToCart == true).ToList();
+        return View("Cart", ProductsInCart);
+    }
+
+
+
+    [HttpGet("/codepink/checkout")]
+    public IActionResult Checkout()
+    {
+        return View("Checkout");
+    }
 }
 
 

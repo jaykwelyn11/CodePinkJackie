@@ -1,3 +1,49 @@
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="Product" asp-action="CodePink">CodePink</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="CodePink">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="User"
+                        asp-action="Welcome">Login/Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Laelynn">Laelynn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product"
+                        asp-action="AllProducts">Products</a>
+                </li>
+                @if (Context.Session.GetInt32("uid") == 1)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AddOne">Add
+                            Product</a>
+                    </li>
+                }
+                @if (Context.Session.GetInt32("uid") != null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+                    </li>
+                }
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="ViewCart">Cart</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
 @model List<Product>
 
 <div class="top-container">
@@ -19,12 +65,11 @@
                 <div class="d-flex flex-row justify-content-between align-items-start mb3 sub-top-container">
                     <p class="card-text grey-text">@product.Price</p>
                 </div>
-                <div class="tea-title-container mb3">
-                    <a class="card-title fs-3" asp-controller="Product" asp-action="ViewOne"
-                    asp-route-id="@product.ProductId">@product.Name</a>
+                <div>
+                    <a href="/codepink/@product.ProductId">@product.Name</a>
                     <form asp-controller="Product" asp-action="RemoveFromCart" asp-route-id="@product.ProductId">
                         <button class="btn">
-                            <span class="all-bg"><i class="fa-solid fa-trash"></i></span>
+                            <span class="all-bg"><i class="fa-solid fa-trash">Delete</i></span>
                         </button>
                     </form>
                 </div>
