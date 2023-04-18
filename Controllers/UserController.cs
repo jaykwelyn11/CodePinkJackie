@@ -105,10 +105,10 @@ public class UserController : Controller
         return RedirectToAction("CodePink", "Product");
     }
 
-    [HttpPost("/logout")]
+    [HttpGet("/logout")]
     public IActionResult Logout()
     {
         HttpContext.Session.Clear();
-        return RedirectToAction("Index");
+        return RedirectToAction("CodePink", "Product");
     }
 }

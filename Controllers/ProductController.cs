@@ -37,7 +37,8 @@ public class ProductController : Controller
     [HttpGet("/codepink/products")]
     public IActionResult AllProducts()
     {
-        List<Product> addedProducts = db.Products.ToList();
+        List<Product> addedProducts = db.Products
+        .OrderBy(p => p.Category).ToList();
 
         return View("AllProd", addedProducts);
         // return View("AllProd");
@@ -148,65 +149,6 @@ public class ProductController : Controller
         return RedirectToAction("AllProducts");
     }
 
-
-    [HttpPost("/codepink/{id}/cart/add")]
-    public IActionResult AddToCart(int id, Product addedProduct)
-    {
-
-        Product? dbProduct = db.Products.FirstOrDefault(t => t.ProductId == id);
-        if (dbProduct == null)
-        {
-            return RedirectToAction("AllProducts");
-            // Console.BackgroundColor = ConsoleColor.Black;
-            // Console.ForegroundColor = ConsoleColor.Red;
-            // Console.WriteLine("FAIL.");
-        }
-
-        dbProduct.AddToCart = true;
-
-        db.Products.Update(dbProduct);
-        db.SaveChanges();
-
-        return RedirectToAction("AllProducts");
-    }
-
-
-    [HttpPost("/codepink/{id}/cart/delete")]
-    public IActionResult RemoveFromCart(int id, Product removedProduct)
-    {
-
-        Product? dbProduct = db.Products.FirstOrDefault(t => t.ProductId == id);
-        if (dbProduct == null)
-        {
-            return RedirectToAction("AllProducts");
-            // Console.BackgroundColor = ConsoleColor.Black;
-            // Console.ForegroundColor = ConsoleColor.Red;
-            // Console.WriteLine("FAIL.");
-        }
-
-        dbProduct.AddToCart = false;
-
-        db.Products.Update(dbProduct);
-        db.SaveChanges();
-
-        return RedirectToAction("ViewCart");
-    }
-
-
-    [HttpGet("/codepink/cart")]
-    public IActionResult ViewCart()
-    {
-        List<Product> ProductsInCart = db.Products.Where(t => t.AddToCart == true).ToList();
-        return View("Cart", ProductsInCart);
-    }
-
-
-
-    [HttpGet("/codepink/checkout")]
-    public IActionResult Checkout()
-    {
-        return View("Checkout");
-    }
 
 }
 
