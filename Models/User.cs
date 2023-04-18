@@ -6,7 +6,9 @@ namespace CodePinkJackie.Models;
 public class User
 {
     [Key]
+
     public int UserId { get; set; }
+
 
     [Required]
     [MinLength(2, ErrorMessage = "First name needs to be at least 2 characters.")]
@@ -16,6 +18,17 @@ public class User
     [MinLength(2, ErrorMessage = "Last name needs to be at least 2 characters.")]
     public string LastName { get; set; }
 
+
+    public string Nickname { get; set; }
+
+    [Required]
+    public DateTime DateOfBirth { get; set; }
+
+    [Required]
+    public string SchoolIdImage { get; set; }
+
+    [Required]
+    public string ParentIdImage { get; set; }
 
     [Required]
     [EmailAddress]
@@ -31,7 +44,8 @@ public class User
     [NotMapped]
     [DataType(DataType.Password)]
     [Compare("Password", ErrorMessage = "Passwords don't match, try again!")]
-    public string Confirm { get; set; }
+    public string ConfirmPassword { get; set; }
+
 
     public List<Product> addedProduct { get; set; } = new List<Product>();
 

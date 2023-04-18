@@ -19,36 +19,6 @@ namespace CodePinkJackie.Migrations
                 .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("CodePinkJackie.Models.Donation", b =>
-                {
-                    b.Property<int>("DonationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<bool>("DonateMoney")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<bool>("DonateProduct")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DonationId");
-
-                    b.ToTable("Donations");
-                });
-
             modelBuilder.Entity("CodePinkJackie.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
@@ -109,9 +79,9 @@ namespace CodePinkJackie.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("CodePinkJackie.Models.Student", b =>
+            modelBuilder.Entity("CodePinkJackie.Models.User", b =>
                 {
-                    b.Property<int>("StudentId")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -120,6 +90,10 @@ namespace CodePinkJackie.Migrations
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -137,43 +111,11 @@ namespace CodePinkJackie.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("SchoolIdImage")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("StudentId");
-
-                    b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("CodePinkJackie.Models.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SchoolIdImage")
                         .IsRequired()
                         .HasColumnType("longtext");
 

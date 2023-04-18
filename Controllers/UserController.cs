@@ -26,19 +26,17 @@ public class UserController : Controller
         }
     }
 
-    [HttpGet("")]
-    public IActionResult Home()
+
+    [HttpGet("codepink/laelynn")]
+    public IActionResult Laelynn()
     {
-        if (HttpContext.Session.GetInt32("uid") != null)
-        {
-            return RedirectToAction("CodePink", "Product");
-        }
-        return View("Index");
+        return View("Laelynn");
     }
 
 
+
     [HttpGet("/welcome")]
-    public IActionResult LogReg()
+    public IActionResult Welcome()
     {
         if (HttpContext.Session.GetInt32("uid") != null)
         {
@@ -46,7 +44,7 @@ public class UserController : Controller
         }
         else
         {
-            return View("LogReg");
+            return View("Login");
         }
     }
 
@@ -55,7 +53,7 @@ public class UserController : Controller
     {
         if (!ModelState.IsValid)
         {
-            return View("LogReg");
+            return View("Laelynn");
         }
         else
         {
@@ -76,7 +74,7 @@ public class UserController : Controller
     {
         if (!ModelState.IsValid)
         {
-            return View("LogReg");
+            return View("Login");
         }
 
         // If initial ModelState is valid, query for a user with the provided email        
@@ -86,7 +84,7 @@ public class UserController : Controller
         {
             // Add an error to ModelState and return to View!            
             ModelState.AddModelError("LoginEmail", "Invalid Email/Password");
-            return View("LogReg");
+            return View("Login");
         }
         // Otherwise, we have a user, now we need to check their password                 
         // Initialize hasher object        
@@ -96,7 +94,7 @@ public class UserController : Controller
         if (result == 0)
         {
             ModelState.AddModelError("LoginEmail", "Invalid Email/Password");
-            return View("LogReg");
+            return View("Login");
         }
 
         // Handle success (this should route to an internal page)  

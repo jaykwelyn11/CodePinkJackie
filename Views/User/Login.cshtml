@@ -1,0 +1,93 @@
+@{
+    ViewData["Title"] = "Welcome!";
+}
+
+@{
+    ViewData["Title"] = "Code Pink";
+}
+
+@model LoginUser
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="Product" asp-action="CodePink">CodePink</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="CodePink">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="User"
+                        asp-action="Welcome">Login/Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Laelynn">Laelynn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product"
+                        asp-action="AllProducts">Products</a>
+                </li>
+                @if (Context.Session.GetInt32("uid") == 1)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AddOne">Add
+                            Product</a>
+                    </li>
+                }
+                @if (Context.Session.GetInt32("uid") != null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="indexhead animate__animated animate__bounce">Welcome to Code Pink!</h1>
+
+
+
+    <link rel="stylesheet" href="~/css/laelynn/login.css">
+
+    <body>
+        <div class="divider">
+            <div class="right-side">
+                <a href="/"><img id="video_overlays" src="~/images/laelynnimages/laelynnlogo.png"
+                        alt="you're in words"></a>
+                <video id="myvideo" src="~/videos/login.mov" autoplay muted loop></video>
+            </div>
+            <div class="left-side">
+                <div class="formdivy">
+                    <form asp-action="Login" asp-controller="User" method="Post" class="card-form">
+                        <h2 class="text-center font-up font-bold py-4 white-text">Sign up</h2>
+                        <div class="md-form">
+                            <i class="fa fa-envelope prefix white-text"></i>
+                            <input type="text" id="orangeForm-email2" asp-for="LoginEmail" class="form-control">
+                            <label asp-for="LoginEmail">Your email</label>
+                            <span asp-validation-for="LoginEmail"></span>
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-lock prefix white-text"></i>
+                            <input type="password" id="orangeForm-pass2" asp-for="LoginPassword" class="form-control">
+                            <label asp-for="LoginPassword">Your password</label>
+                            <span asp-validation-for="LoginPassword"></span>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-outline-white waves-effect waves-light">LOGIN</button>
+                        </div>
+                        <h3 class="signupinstead">Not a student yet? <a href="/codepink/laelynn/#SignUp">Sign Up</a>
+                        </h3>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>

@@ -1,7 +1,8 @@
-@{
-    ViewData["Title"] = "Laelynn";
+﻿@{
+    ViewData["Title"] = "Code Pink";
 }
 
+@model User
 
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container-fluid">
@@ -13,14 +14,14 @@
         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Home">Home</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="CodePink">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="User"
-                        asp-action="LogReg">Login/Register</a>
+                        asp-action="Welcome">Login/Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Org" asp-action="Laelynn">Laelynn</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Laelynn">Laelynn</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Product"
@@ -39,9 +40,17 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Logout</a>
                     </li>
                 }
+
             </ul>
         </div>
     </div>
 </nav>
 
-<h1>Thank you for your donation!</h1>
+@* <h1>Welcome, @Context.Session.GetString("name")</h1> *@
+
+@* @if (Context.Session.GetInt32("uid") == 1)
+    {
+    <h1>Welcome, @Context.Session.GetString("name")</h1>
+    } *@
+
+<h1>This is the CodePink page.</h1>

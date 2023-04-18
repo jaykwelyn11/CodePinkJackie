@@ -2,7 +2,7 @@
     ViewData["Title"] = "Laelynn";
 }
 
-@model Student
+@model User
 
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container-fluid">
@@ -14,14 +14,14 @@
         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Home">Home</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="CodePink">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="User"
-                        asp-action="LogReg">Login/Register</a>
+                        asp-action="Welcome">Login/Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Org" asp-action="Laelynn">Laelynn</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Laelynn">Laelynn</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Product"
@@ -49,11 +49,6 @@
 
 
 
-<div class="col-md">
-    <div class="col-md">
-        @await Html.PartialAsync("_SignUp")
-    </div>
-    <div class="col-md">
-        @await Html.PartialAsync("_Donate")
-    </div>
+<div id="SignUpForLaelynn">
+    @await Html.PartialAsync("LaePartials/_SignUpForm")
 </div>

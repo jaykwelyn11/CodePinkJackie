@@ -34,6 +34,8 @@ public class ProductController : Controller
         return View("Index");
     }
 
+
+
     [HttpGet("/codepink/products")]
     public IActionResult AllProducts()
     {
@@ -82,7 +84,7 @@ public class ProductController : Controller
             db.SaveChanges();
             return RedirectToAction("AllProducts");
         }
-        return View("AddProduct");
+        return View("AddOne");
     }
 
     [SessionCheck]

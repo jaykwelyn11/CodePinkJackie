@@ -10,7 +10,4 @@ public class MyContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Product> Products { get; set; }
 
-    public DbSet<Student> Students { get; set; }
-
-    public DbSet<Donation> Donations { get; set; }
 }
