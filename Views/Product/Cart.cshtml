@@ -53,7 +53,7 @@
         <a class="subtitle-cart" asp-controller="Product" asp-action="Checkout">Checkout.</a>
     </div>
 </div>
-<div class="card-container row row-cols-1 row-cols-md-4 g-4">
+<div>
     @{
         double? totalPrice = 0;
     }
@@ -72,6 +72,15 @@
                             <span class="all-bg"><i class="fa-solid fa-trash">Delete</i></span>
                         </button>
                     </form>
+                    @* *@
+                    <div class="container">
+                        <input type="button" onclick="decrementValue()" value="-" />
+                        <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                        <input type="button" onclick="incrementValue()" value="+" />
+                    </div>
+                    @* *@
+
+
                 </div>
                 <div class="bottom-card-text-container">
                     <div class="left-container">

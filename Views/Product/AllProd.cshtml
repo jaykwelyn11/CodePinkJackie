@@ -64,7 +64,7 @@
             <p>$@product.Price</p>
         </a>
         <form asp-controller="Product" asp-action="AddToCart" asp-route-id="@product.ProductId">
-            <button class="btn">Add To Cart</button>
+            <button class="btn" onclick="buttonClick()">Add To Cart</button>
         </form>
 
     </div>
